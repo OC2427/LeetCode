@@ -1,9 +1,10 @@
 class Solution {
     public int reverseDegree(String s) {
-        int sum = 0;
-        for(int i = 0; i < s.length(); i++){
-            int value = 26 - (s.charAt(i) - 'a');
-            sum = sum + value * (i+1);
+        int sum = 0, count = 1;
+        while(count != (s.length() + 1)){
+            int ch = (int)(s.charAt(count - 1));
+            sum += ((123 - ch) * count);
+            count++;
         }
         return sum;
     }
